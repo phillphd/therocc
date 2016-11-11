@@ -1,0 +1,97 @@
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    &__logo {
+        position: absolute;
+        left: 30px;
+        width: 100%;
+        max-width: 200px;
+        max-height: 80px;
+    }
+}
+.main-nav {
+    padding: 30px 0;
+    margin: 0;
+    text-align: center;
+    li {
+        display: inline;
+        padding: 0 10px;
+        text-transform: uppercase;
+    }
+    a {
+        color: $light;
+    }
+}
+
+.hero {
+    position: relative;
+    height: 90vh;
+    min-height: 900px;
+    margin-bottom: 70px;
+    background-color: $dark;
+    &__logo {
+        position: absolute;
+        left: 30px;
+        width: 100%;
+        max-width: 200px;
+        max-height: 80px;
+    }
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: $light;
+        text-align: center;
+        transform: translateY(-50%) translateX(-50%);
+    }
+    &__alert {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 8px;
+        font-weight: 300;
+        text-align: center;
+        background-color: $brand-primary;
+        a {
+            padding: 0 10px;
+            margin-left: 10px;
+            font-weight: 400;
+            color: $light;
+            border: 1px solid $light;
+            transition: .4s;
+            &:hover {
+                color: $brand-primary;
+                text-decoration: none;
+                background-color: $light;
+            }
+        }
+    }
+    &__sermon-meta {
+        text-align: left;
+        h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+        h6 {
+            margin: 0 0 3px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: $brand-primary;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        span {
+            color: #A9A9A9;
+        }
+    }
+    .home & {
+        height: 100vh;
+    }
+}

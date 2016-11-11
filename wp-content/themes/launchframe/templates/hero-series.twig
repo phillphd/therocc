@@ -1,0 +1,25 @@
+{% block site_nav %}
+
+{% if posts %}
+    {% for post in posts|slice(0, 1) %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <a href="{{ post.link }}">
+                        <div class="message-card">
+                            <div class="u-abs-full bg-img" style="background-image: url('{{ post.get_field('series_artwork') }}');"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 hero__sermon-meta">
+                    <h6>Latest Series</h6>
+                    <h1>{{ post.title }}</h1>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

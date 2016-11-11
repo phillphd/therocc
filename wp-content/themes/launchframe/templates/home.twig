@@ -1,0 +1,29 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+	<div class="hero">
+		<div class="hero__content">
+			{% include 'hero-home.twig' %}
+		</div>
+		<div class="hero__alert">
+			This is an alert about something important <a href="#!">Click Here</a>
+		</div>
+	</div>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 media-img">
+					<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
+				</div>
+				<div class="col-md-6 offset-md-1 vp-md-top-2">
+					<h2>You don't have to say goodbye anymore</h2>
+					<p class="vm-xs-bottom-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae amet deserunt, facilis placeat aut dolorem porro, asperiores nostrum dolore!</p>
+					<a href="#!" class="btn btn-secondary">Get the App</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

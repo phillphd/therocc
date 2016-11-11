@@ -1,0 +1,21 @@
+footer {
+    margin-top: 70px;
+    background-color: $gray-light;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+}
+.base {
+    padding: 20px 0;
+    background-color: $dark;
+    p {
+        margin-bottom: 0;
+        line-height: 1.2;
+        color: $light;
+    }
+    span {
+        font-size: .8rem;
+    }
+}

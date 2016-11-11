@@ -1,0 +1,75 @@
+@import "custom_variables";
+@import "../../vendor/bootstrap/scss/bootstrap";
+@import "utilities";
+@import "grid_extensions";
+@import "type";
+@import "lists";
+@import "forms";
+@import "header";
+@import "footer";
+
+.btn-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    width: 60px;
+    height: 60px;
+    background-color: fade-out($light, .3);
+    border-radius: 50%;
+    content: "";
+    opacity: 0;
+    transform: translateY(-50%) translateX(-50%);
+    transition: .4s;
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 55%;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 25px solid $dark;
+        content: "";
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+.message-card {
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+    margin-bottom: 30px;
+    transition: .4s;
+    &::after {
+        @extend .u-abs-full;
+        background-color: fade-out($dark, .6);
+        transition: .4s;
+    }
+    &__info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        padding: 20px;
+    }
+    h4,
+    p {
+        margin: 0;
+        color: $light;
+    }
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 25px -5px $dark;
+        &::after {
+            background-color: fade-out($dark, .3);
+        }
+        .btn-play {
+            opacity: 1;
+        }
+    }
+}
+
+.media-img {
+    height: 300px;
+}

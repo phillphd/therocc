@@ -1,0 +1,47 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	
+	<div class="hero">
+		<div class="hero__content">
+			{% include 'hero-sermon.twig' %}
+		</div>
+		<div class="hero__alert">
+			This is an alert about something important <a href="#!">Click Here</a>
+		</div>
+	</div>
+
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 vm-xs-bottom-1 text-xs-center">
+					<h2>All Sermons</h2>
+				</div>
+			</div>
+			<div class="row">
+				{% if post.get_field('sermons') %}
+					{% for sermon in post.get_field('sermons') %}
+						<div class="col-sm-6 ">
+						    <a href="#!" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
+						        <div class="message-card">
+						            <div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
+						            <div class="btn-play"></div>
+						            <div class="message-card__info">
+						                <h4>{{ sermon.title }}</h3>
+						                <p>{{ sermon.date }}</p>
+						            </div>
+						        </div>
+						    </a>
+						</div>
+					{% endfor %}
+				{% endif %}
+			</div>
+			<div class="row">
+				<div class="col-sm-12 vm-xs-top-1 text-xs-center">
+					<a href="/series" class="btn btn-primary">Back to Series</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
