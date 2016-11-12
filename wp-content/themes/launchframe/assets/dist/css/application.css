@@ -5660,6 +5660,39 @@ h5 {
   text-transform: uppercase;
 }
 
+cite {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+blockquote {
+  position: relative;
+  padding: 20px 50px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+blockquote::after {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #B1CA4A;
+  content: "";
+}
+
+.site-main ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.site-main ul li {
+  margin-bottom: 40px;
+}
+
 .btn-primary {
   padding: 15px 30px;
   margin-bottom: 20px;
@@ -5721,6 +5754,8 @@ header__logo {
   padding: 30px 0;
   margin: 0;
   text-align: center;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 .main-nav li {
@@ -5731,6 +5766,10 @@ header__logo {
 
 .main-nav a {
   color: #FFF;
+}
+
+.scrolled .main-nav {
+  background-color: #222;
 }
 
 .hero {
@@ -5753,6 +5792,7 @@ header__logo {
   position: absolute;
   top: 50%;
   left: 50%;
+  max-width: 650px;
   color: #FFF;
   text-align: center;
   -webkit-transform: translateY(-50%) translateX(-50%);

@@ -12,3 +12,26 @@ h5 {
     font-weight: 400;
     text-transform: uppercase;
 }
+
+cite {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+}
+
+blockquote {
+    position: relative;
+    padding: 20px 50px;
+    font-style: italic;
+    font-weight: 600;
+    &::after {
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: $brand-primary;
+        content: "";
+    }
+}

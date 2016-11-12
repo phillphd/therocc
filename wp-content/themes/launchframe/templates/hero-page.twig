@@ -1,0 +1,11 @@
+{% block site_nav %}
+
+{% for hero in post.get_field('hero') %}
+	<div class="u-abs-full bg-img" style="background-image: url('{{ hero.bg_image }}');"></div>
+	<div class="hero__content">
+		<h1>{{ hero.title }}</h1>
+		<p>{{ hero.subtitle }}</p>
+	</div>
+{% endfor %}
+
+{% endblock %}

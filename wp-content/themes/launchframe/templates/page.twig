@@ -1,14 +1,62 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+	
+	<div class="hero">
+		{% include 'hero-page.twig' %}
+		<div class="hero__alert">
+			This is an alert about something important <a href="#!">Click Here</a>
+		</div>
+	</div>
+
+	<section>
+		<div class="container">
+			{% for flex_field in post.get_field('flex_fields') %}
+				{% if flex_field.acf_fc_layout == 'text_w_image_left' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-6 media-img">
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+						</div>
+						<div class="col-md-5 offset-md-1 vp-md-top-2">
+							<h2>{{ flex_field.header }}</h2>
+							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
+							<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+						</div>
+					</div>
+				{% elseif flex_field.acf_fc_layout == 'text_w_image_right' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-5 vp-md-top-2">
+							<h2>{{ flex_field.header }}</h2>
+							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
+							<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+						</div>
+						<div class="col-md-6 offset-md-1 media-img">
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+						</div>
+					</div>
+				{% elseif flex_field.acf_fc_layout == 'content_full_width' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-12">
+							<h2>{{ flex_field.header }}</h2>
+							<p>{{ flex_field.body }}</p>
+							<a href="{{ flex_field.button_url }}" class="btn btn-primary vm-xs-top-1">{{ flex_field.button_text }}</a>
+						</div>
+					</div>
+				{% elseif flex_field.acf_fc_layout == 'big_image' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-12 vp-xs-top-12 vp-xs-bottom-12">
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.big_image }}');"></div>
+						</div>
+					</div>
+				{% elseif flex_field.acf_fc_layout == 'content' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-8 offset-md-2">
+							{{ flex_field.wysiwyg }}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+
 {% endblock %}

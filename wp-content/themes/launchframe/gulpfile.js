@@ -123,6 +123,6 @@ gulp.task('version-update', function(){
 });
 
 gulp.task('watch', function () {
-  // watch('assets/src/**/*.js', gulp.parallel('dist-js', 'version-update'));
+  watch('assets/src/**/*.js', gulp.parallel('dist-js', 'version-update'));
   gulp.watch('assets/src/**/*.scss', gulp.parallel('dist-sass', 'version-update'));
 });
