@@ -54,6 +54,20 @@
 							{{ flex_field.wysiwyg }}
 						</div>
 					</div>
+				{% elseif flex_field.acf_fc_layout == 'staff_profiles' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						{% for member in post.get_field('staff') %}
+            				<div class="col-sm-6 col-lg-4 staff">
+								<div class="staff__photo">
+									<div class="u-abs-full bg-img" style="background-image: url('{{ member.photo }}');"></div>
+								</div>
+								<div class="staff__meta">
+									<h5 class="staff__name">{{ member.name }}</h5>
+									<h5><strong>{{ member.title }}</strong> | <a href="mailto: {{ member.email_address }}">email</a></h5>
+								</div>
+							</div>
+    					{% endfor %}
+					</div>
 				{% endif %}
 			{% endfor %}
 		</div>

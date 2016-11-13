@@ -5654,6 +5654,11 @@ h2 {
   font-weight: 300;
 }
 
+h3,
+h4 {
+  margin-bottom: 15px;
+}
+
 h5 {
   font-size: .875rem;
   font-weight: 400;
@@ -5960,6 +5965,24 @@ footer ul {
 
 .media-img {
   height: 300px;
+}
+
+.staff {
+  height: 450px;
+  overflow: hidden;
+}
+
+.staff__photo {
+  position: relative;
+  height: 350px;
+}
+
+.staff__meta {
+  padding: 15px 0 0;
+}
+
+.staff__name {
+  font-size: 1.2rem;
 }
 
 @media (min-width: 576px) {

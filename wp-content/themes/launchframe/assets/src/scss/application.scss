@@ -73,3 +73,18 @@
 .media-img {
     height: 300px;
 }
+
+.staff {
+    height: 450px;
+    overflow: hidden;
+    &__photo {
+        position: relative;
+        height: 350px;
+    }
+    &__meta {
+        padding: 15px 0 0;
+    }
+    &__name {
+        font-size: 1.2rem;
+    }
+}

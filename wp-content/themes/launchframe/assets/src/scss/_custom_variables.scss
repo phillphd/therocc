@@ -84,7 +84,7 @@ $body-color:                 $dark;
 // Define the minimum and maximum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
 
-//$grid-breakpoints: (
+//$grid-breakpoints:
   // Extra small screen / phone
   //xs: 0,
   // Small screen / phone
@@ -114,8 +114,8 @@ $body-color:                 $dark;
 //
 // Set the number of columns and specify the width of the gutters.
 
-//$grid-columns:               12;
-//$grid-gutter-width:          1.875rem; // 30px
+$grid-columns:               12;
+$grid-gutter-width:          2.5rem; // 30px
 
 
 // Typography
