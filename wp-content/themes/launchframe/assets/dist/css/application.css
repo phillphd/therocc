@@ -5794,6 +5794,15 @@ header__logo {
   height: 100vh;
 }
 
+.home .hero .hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+
 .hero__logo {
   position: absolute;
   left: 30px;

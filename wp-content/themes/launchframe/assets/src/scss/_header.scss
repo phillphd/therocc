@@ -35,6 +35,13 @@ header {
     background-color: $dark;
     .home & {
         height: 100vh;
+        .hero__content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: 0 auto;
+            transform: translateY(-50%) translateX(-50%);
+        }
     }
     &__logo {
         position: absolute;
