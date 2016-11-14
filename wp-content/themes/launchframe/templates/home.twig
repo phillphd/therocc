@@ -13,101 +13,77 @@
 
 	<section>
 		<div class="container">
-			<div class="row vp-xs-top-4 vp-xs-bottom-4">
-				<div class="col-md-6 media-img">
-					<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
-				</div>
-				<div class="col-md-5 offset-md-1 vp-md-top-2">
-					<h2>You don't have to say goodbye anymore</h2>
-					<p class="vm-xs-bottom-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae amet deserunt, facilis placeat aut dolorem porro, asperiores nostrum dolore!</p>
-					<a href="#!" class="btn btn-secondary">Get the App</a>
-				</div>
-			</div>
-			<div class="row vp-xs-top-4 vp-xs-bottom-4">
-				<div class="col-md-5 vp-md-top-2">
-					<h2>You don't have to say goodbye anymore</h2>
-					<p class="vm-xs-bottom-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repudiandae amet deserunt, facilis placeat aut dolorem porro, asperiores nostrum dolore!</p>
-					<a href="#!" class="btn btn-secondary">Get the App</a>
-				</div>
-				<div class="col-md-6 offset-md-1 media-img">
-					<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
-				</div>
-			</div>
-			<div class="row vp-xs-top-4 vp-xs-bottom-4">
-				<div class="col-md-12">
-					<h2>You don't have to say goodbye anymore</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore dicta tenetur eos autem? Laboriosam labore nostrum neque saepe, soluta atque doloremque explicabo, recusandae provident. Obcaecati nesciunt quaerat facere, dolore.</p>
-					<a href="#!" class="btn btn-primary vm-xs-top-1">Click Me</a>
-				</div>
-			</div>
-			<div class="row vp-xs-top-4 vp-xs-bottom-4">
-				<div class="col-md-12 vp-xs-top-12 vp-xs-bottom-12">
-					<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
-				</div>
-			</div>
-			<div class="row vp-xs-top-4 vp-xs-bottom-4">
-				<div class="col-md-8 offset-md-2">
-					<h2>You don't have to say goodbye anymore</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore dicta tenetur eos autem? Laboriosam labore nostrum neque saepe, soluta atque doloremque explicabo, recusandae provident. Obcaecati nesciunt quaerat facere, dolore.</p>
-					<blockquote>This is where you would put a blockquote and stuff I This is where you would put a blockquote and stuff I dont want to type anymore. dont want to type anymore. This is where you would put a blockquote and stuff I dont want to type anymore. This is where you would put a blockquote and stuff I dont want to type anymore.</blockquote>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore dicta tenetur eos autem? Laboriosam labore nostrum neque saepe, soluta atque doloremque explicabo, <a href="#!">recusandae provident</a>. Obcaecati nesciunt quaerat facere, dolore.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore dicta tenetur eos autem? Laboriosam labore nostrum neque saepe, soluta atque doloremque explicabo, recusandae provident. Obcaecati nesciunt quaerat facere, dolore.</p>
-				</div>
-			</div>
-			<div class="row vp-xs-top-4 vp-xs-bottom-4">
-				<div class="col-sm-6 col-lg-4 staff">
-					<div class="staff__photo">
-						<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
+			{% for flex_field in post.get_field('flex_fields') %}
+				{% if flex_field.acf_fc_layout == 'text_w_image_left' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-6 media-img">
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+						</div>
+						<div class="col-md-5 offset-md-1 vp-md-top-2">
+							<h2>{{ flex_field.header }}</h2>
+							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
+							{% if flex_field.button_text %}
+								<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+							{% endif %}
+						</div>
 					</div>
-					<div class="staff__meta">
-						<h5 class="staff__name">Dr. John Shepherd</h5>
-						<h5><strong>Lead Pastor</strong> | <a href="#!">email</a></h5>
+				{% elseif flex_field.acf_fc_layout == 'text_w_image_right' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-5 vp-md-top-2">
+							<h2>{{ flex_field.header }}</h2>
+							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
+							<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+						</div>
+						<div class="col-md-6 offset-md-1 media-img">
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 staff">
-					<div class="staff__photo">
-						<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
+				{% elseif flex_field.acf_fc_layout == 'content_full_width' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-12">
+							<h2>{{ flex_field.header }}</h2>
+							<p>{{ flex_field.body }}</p>
+							{% if flex_field.button_text %}
+								<a href="{{ flex_field.button_url }}" class="btn btn-primary vm-xs-top-1">{{ flex_field.button_text }}</a>
+							{% endif %}
+						</div>
 					</div>
-					<div class="staff__meta">
-						<h5 class="staff__name">Dr. John Shepherd</h5>
-						<h5><strong>Lead Pastor</strong> | <a href="#!">email</a></h5>
+				{% elseif flex_field.acf_fc_layout == 'big_image' %}
+					<div class="row vp-xs-top-4">
+						<div class="col-md-12 vp-xs-top-12 vp-xs-bottom-12">
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+						</div>
 					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 staff">
-					<div class="staff__photo">
-						<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
+				{% elseif flex_field.acf_fc_layout == 'content' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						<div class="col-md-8 offset-md-2">
+							{{ flex_field.wysiwyg }}
+						</div>
 					</div>
-					<div class="staff__meta">
-						<h5 class="staff__name">Dr. John Shepherd</h5>
-						<h5><strong>Lead Pastor</strong> | <a href="#!">email</a></h5>
+				{% elseif flex_field.acf_fc_layout == 'staff_profiles' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+						{% for member in flex_field.staff %}
+            				<div class="col-sm-6 col-lg-4 staff">
+								<div class="staff__photo">
+									<div class="u-abs-full bg-img" style="background-image: url('{{ member.photo }}');"></div>
+								</div>
+								<div class="staff__meta">
+									<h5 class="staff__name">{{ member.name }}</h5>
+									<h5><strong>{{ member.title }}</strong> | <a href="mailto: {{ member.email_address }}">email</a></h5>
+								</div>
+							</div>
+    					{% endfor %}
 					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 staff">
-					<div class="staff__photo">
-						<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
+				{% elseif flex_field.acf_fc_layout == 'location' %}
+					<div class="row vp-xs-top-4 vp-xs-bottom-4" style="position: relative;">
+						<div id="map" class="u-abs-full bg-img bg-map"></div>
+						<div class="col-md-4 vp-xs-top-12 vp-xs-bottom-12">
+							<h3>{{ flex_field.header }}</h3>
+							{{ flex_field.body }}
+						</div>
 					</div>
-					<div class="staff__meta">
-						<h5 class="staff__name">Dr. John Shepherd</h5>
-						<h5><strong>Lead Pastor</strong> | <a href="#!">email</a></h5>
-					</div>
-				</div>
-				<div class="col-sm-6 col-lg-4 staff">
-					<div class="staff__photo">
-						<div class="u-abs-full bg-img" style="background-image: url('http://therocc.com/wp-content/uploads/2014/02/instagram_plain-980x560.jpg');"></div>
-					</div>
-					<div class="staff__meta">
-						<h5 class="staff__name">Dr. John Shepherd</h5>
-						<h5><strong>Lead Pastor</strong> | <a href="#!">email</a></h5>
-					</div>
-				</div>
-			</div>
-			<div class="row vp-xs-top-4 vp-xs-bottom-4" style="position: relative;">
-				<div id="map" class="u-abs-full bg-img bg-map"></div>
-				<div class="col-md-4 vp-xs-top-12 vp-xs-bottom-12">
-					<h3>Plan a Visit</h3>
-					Services are held at Blackman High School at 3956 Blaze Drive Murfreesboro, TN at 10:00am
-				</div>
-			</div>
+				{% endif %}
+			{% endfor %}
 		</div>
 	</section>
 
