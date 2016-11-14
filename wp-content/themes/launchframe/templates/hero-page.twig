@@ -5,6 +5,11 @@
 	<div class="hero__content">
 		<h1>{{ hero.title }}</h1>
 		<p>{{ hero.subtitle }}</p>
+		<div class="vm-xs-top-4">
+			{% if hero.additional_content %}
+				{{ hero.additional_content }}
+			{% endif %}
+		</div>
 	</div>
 {% endfor %}
 

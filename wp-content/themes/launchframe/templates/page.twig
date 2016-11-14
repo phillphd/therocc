@@ -20,7 +20,9 @@
 						<div class="col-md-5 offset-md-1 vp-md-top-2">
 							<h2>{{ flex_field.header }}</h2>
 							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
-							<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+							{% if flex_field.button_text %}
+								<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+							{% endif %}
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'text_w_image_right' %}
@@ -39,13 +41,15 @@
 						<div class="col-md-12">
 							<h2>{{ flex_field.header }}</h2>
 							<p>{{ flex_field.body }}</p>
-							<a href="{{ flex_field.button_url }}" class="btn btn-primary vm-xs-top-1">{{ flex_field.button_text }}</a>
+							{% if flex_field.button_text %}
+								<a href="{{ flex_field.button_url }}" class="btn btn-primary vm-xs-top-1">{{ flex_field.button_text }}</a>
+							{% endif %}
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'big_image' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+					<div class="row vp-xs-top-4">
 						<div class="col-md-12 vp-xs-top-12 vp-xs-bottom-12">
-							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.big_image }}');"></div>
+							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content' %}
@@ -56,7 +60,7 @@
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'staff_profiles' %}
 					<div class="row vp-xs-top-4 vp-xs-bottom-4">
-						{% for member in post.get_field('staff') %}
+						{% for member in flex_field.staff %}
             				<div class="col-sm-6 col-lg-4 staff">
 								<div class="staff__photo">
 									<div class="u-abs-full bg-img" style="background-image: url('{{ member.photo }}');"></div>
