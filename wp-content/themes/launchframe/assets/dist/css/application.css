@@ -5790,6 +5790,10 @@ header__logo {
   background-color: #222;
 }
 
+.home .hero {
+  height: 100vh;
+}
+
 .hero__logo {
   position: absolute;
   left: 30px;
