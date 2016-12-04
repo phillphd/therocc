@@ -72,13 +72,15 @@
 							</div>
     					{% endfor %}
 					</div>
-				{% elseif flex_field.acf_fc_layout == 'location' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4" style="position: relative;">
-						<div id="map" class="u-abs-full bg-img bg-map"></div>
-						<div class="col-md-4 vp-xs-top-12 vp-xs-bottom-12">
-							<h3>{{ flex_field.header }}</h3>
-							<p>{{ flex_field.body }}</p>
+				{% elseif flex_field.acf_fc_layout == 'big_map' %}
+					<div class="row vp-xs-top-8 vp-xs-bottom-8" style="position: relative;">
+						<div class="map-text">
+							<h3>Service @ 10:00 AM</h3>
+							<hr />
+							<h4>River Oaks Community Church<br />
+								210 Rucker Lane, Murfreesboro, TN 37128</h4>
 						</div>
+						<div id="map" class="u-abs-full bg-img bg-map" data-lattitude="35.859310" data-longitude="-86.475816"></div>
 					</div>
 				{% endif %}
 			{% endfor %}

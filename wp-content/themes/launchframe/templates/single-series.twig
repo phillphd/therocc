@@ -2,10 +2,8 @@
 
 {% block content %}
 	
-	<div class="hero">
-		<div class="hero__content">
-			{% include 'hero-sermon.twig' %}
-		</div>
+	<div class="hero hero--sermon">
+		<div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
 		<div class="hero__alert">
 			This is an alert about something important <a href="#!">Click Here</a>
 		</div>
@@ -22,8 +20,8 @@
 				{% if post.get_field('sermons') %}
 					{% for sermon in post.get_field('sermons') %}
 						<div class="col-sm-6 ">
-						    <a href="#!" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
-						        <div class="message-card">
+						    <a href="#!">
+						        <div class="message-card video-container" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
 						            <div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
 						            <div class="btn-play"></div>
 						            <div class="message-card__info">

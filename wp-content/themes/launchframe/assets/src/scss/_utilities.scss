@@ -22,5 +22,6 @@
 .bg-map {
     right: 0;
     left: inherit;
-    width: 60%;
+    z-index: -1;
+    width: 70%;
 }

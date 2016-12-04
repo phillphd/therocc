@@ -10,6 +10,7 @@ h2 {
 h3,
 h4 {
     margin-bottom: 15px;
+    font-weight: 300;
 }
 h5 {
     font-size: .875rem;
@@ -37,5 +38,18 @@ blockquote {
         height: 2px;
         background-color: $brand-primary;
         content: "";
+    }
+}
+
+.map-text {
+    z-index: 9;
+    display: inline-block;
+    padding: 60px 40px 60px 0;
+    background-color: $light;
+    hr {
+        width: 30%;
+        margin: 20px auto 20px 0;
+        border: 0;
+        border-bottom: 1px solid $brand-primary;
     }
 }

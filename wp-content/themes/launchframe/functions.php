@@ -18,9 +18,10 @@ class LaunchframeSite extends TimberSite {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
-		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'register_menus' ) );
+		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
     	add_action('wp_enqueue_scripts', array( $this, 'lf_cleanup'));
     	add_action( 'wp_enqueue_scripts', array( $this, 'register_stylesheets' ) );
     	add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
@@ -43,9 +44,9 @@ class LaunchframeSite extends TimberSite {
   }
   function register_scripts() {
   	global $package_version;
-  	wp_enqueue_script( 'jquery-js', 'https://code.jquery.com/jquery-3.1.1.min.js', true, $package_version );
-  	wp_enqueue_script( 'map-js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCj9GPxSVlN4Tz8VM69DXT2f9t4faXxO-s&callback=initMap', true, $package_version );
-    wp_enqueue_script( 'application-js', get_template_directory_uri() . '/assets/dist/js/script.min.js', true, $package_version );
+  	wp_enqueue_script( 'jquery-js', 'https://code.jquery.com/jquery-3.1.1.min.js', array(), $package_version, true );
+  	wp_enqueue_script( 'map-js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCj9GPxSVlN4Tz8VM69DXT2f9t4faXxO-s', array('jquery-js'), $package_version, true );
+    wp_enqueue_script( 'application-js', get_template_directory_uri() . '/assets/dist/js/script.min.js', array('jquery-js'), $package_version, true );
   }
 
 	function register_post_types() {
@@ -122,8 +123,22 @@ class LaunchframeSite extends TimberSite {
 		//this is where you can register custom taxonomies
 	}
 
+	function register_menus() {
+	  	register_nav_menus(
+	    	array(
+	      		'primary-nav' => __( 'Primary Navigation' ),
+	      		'footer-nav-1' => __( 'Footer Navigation 1' ),
+	      		'footer-nav-2' => __( 'Footer Navigation 2' ),
+	      		'footer-nav-3' => __( 'Footer Navigation 3' )
+	    	)
+	  	);
+	}
+
 	function add_to_context( $context ) {
-		$context['menu'] = new TimberMenu();
+		$context['primaryNav'] = new TimberMenu('primary-nav');
+		$context['footerNav1'] = new TimberMenu('footer-nav-1');
+		$context['footerNav2'] = new TimberMenu('footer-nav-2');
+		$context['footerNav3'] = new TimberMenu('footer-nav-3');
 		$context['site'] = $this;
 		return $context;
 	}

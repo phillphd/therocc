@@ -1,35 +1,40 @@
 <footer>
-	<div class="container vp-xs-top-4 vp-xs-bottom-4">
+	<div class="container vp-xs-top-3 vp-xs-bottom-4">
+		<div class="row">
+			<div class="col-xs-8 offset-xs-2 vm-xs-bottom-3 text-xs-center">
+				<p><strong>10:00am at Blackman High School</strong><br />3956 Blaze Drive Murfreesboro, TN 37128</p>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-xs-2 offset-xs-3">
-				<h5>Header</h5>
-				<ul>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-				</ul>
+				{% if footerNav1.get_items %}
+					<h5>{{footerNav1.title}}</h5>
+					<ul>
+						{% for item in footerNav1.get_items %}
+							<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			</div>
 			<div class="col-xs-2">
-				<h5>Header</h5>
-				<ul>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-				</ul>
+				{% if footerNav2.get_items %}
+					<h5>{{footerNav2.title}}</h5>
+					<ul>
+						{% for item in footerNav2.get_items %}
+							<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			</div>
 			<div class="col-xs-2">
-				<h5>Header</h5>
-				<ul>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-					<li><a href="#!">Item</a></li>
-				</ul>
+				{% if footerNav3.get_items %}
+					<h5>{{footerNav3.title}}</h5>
+					<ul>
+						{% for item in footerNav3.get_items %}
+							<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
 			</div>
 		</div>
 	</div>
