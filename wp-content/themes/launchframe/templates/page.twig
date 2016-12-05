@@ -73,15 +73,16 @@
     					{% endfor %}
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'big_map' %}
-					<div class="row vp-xs-top-8 vp-xs-bottom-8" style="position: relative;">
-						<div class="map-text">
-							<h3>Service @ 10:00 AM</h3>
-							<hr />
-							<h4>River Oaks Community Church<br />
-								210 Rucker Lane, Murfreesboro, TN 37128</h4>
+					{% if flex_field.lattitude and flex_field.longitude %}
+						<div class="row vm-xs-top-4 vm-xs-bottom-4 vp-xs-top-8 vp-xs-bottom-8" style="position: relative;">
+							<div class="map-text">
+								<h3>{{ flex_field.header }}</h3>
+								<hr />
+								<h4>{{ flex_field.address }}</h4>
+							</div>
+							<div id="map" class="u-abs-full bg-img bg-map" data-lattitude="{{ flex_field.lattitude }}" data-longitude="{{ flex_field.longitude }}"></div>
 						</div>
-						<div id="map" class="u-abs-full bg-img bg-map" data-lattitude="35.859310" data-longitude="-86.475816"></div>
-					</div>
+					{% endif %}
 				{% endif %}
 			{% endfor %}
 		</div>
