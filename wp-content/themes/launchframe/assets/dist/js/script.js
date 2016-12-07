@@ -57,12 +57,23 @@
                 });
             }
         },
+        oneYearBible: {
+            test: function test() {
+                return $(".bible-content").length;
+            },
+            run: function run() {
+                var time = new Date();
+                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var month = months[time.getMonth()];
+                $("#" + month).show();
+            }
+        },
         map: {
             test: function test() {
                 return $("#map").length;
             },
             run: function run() {
-                google.maps.event.addDomListener(window, 'load', init);
+                google.maps.event.addDomListener(window, "load", init);
                 function init() {
                     var mapOptions = {
                         zoom: 15,
