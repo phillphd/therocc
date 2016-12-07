@@ -4,9 +4,7 @@
 	
 	<div class="hero hero--sermon">
 		<div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
-		<div class="hero__alert">
-			This is an alert about something important <a href="#!">Click Here</a>
-		</div>
+		{% include '_partial-alert.twig' %}
 	</div>
 
 	<section>
