@@ -23,5 +23,8 @@
     right: 0;
     left: inherit;
     z-index: 1;
-    width: 70%;
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: 70%;
+    }
 }

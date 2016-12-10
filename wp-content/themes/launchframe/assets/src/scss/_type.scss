@@ -12,10 +12,40 @@ h4 {
     margin-bottom: 15px;
     font-weight: 300;
 }
+h1 {
+    font-size: 2.25rem;
+    @include media-breakpoint-up(md) {
+        font-size: 2.5rem;
+    }
+}
+h2 {
+    font-size: 1.75rem;
+    @include media-breakpoint-up(md) {
+        font-size: 2rem;
+    }
+}
+h3 {
+    font-size: 1.5rem;
+    @include media-breakpoint-up(md) {
+        font-size: 1.75rem;
+    }
+}
+h4 {
+    font-size: 1.25rem;
+    @include media-breakpoint-up(md) {
+        font-size: 1.5rem;
+    }
+}
 h5 {
     font-size: .875rem;
     font-weight: 400;
     text-transform: uppercase;
+}
+h6 {
+    font-size: .875rem;
+    @include media-breakpoint-up(md) {
+        font-size: 1rem;
+    }
 }
 
 cite {
@@ -45,8 +75,15 @@ blockquote {
     position: relative;
     z-index: 9;
     display: inline-block;
-    padding: 60px 40px 60px 0;
+    width: 100%;
+    padding: 40px 20px;
+    margin-top: -135px;
     background-color: $light;
+    @include media-breakpoint-up(md) {
+        width: auto;
+        padding: 60px 40px 60px 0;
+        margin-top: 0;
+    }
     hr {
         width: 30%;
         margin: 20px auto 20px 0;

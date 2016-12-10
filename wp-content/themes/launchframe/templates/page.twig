@@ -11,8 +11,8 @@
 		<div class="container">
 			{% for flex_field in post.get_field('flex_fields') %}
 				{% if flex_field.acf_fc_layout == 'text_w_image_left' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4">
-						<div class="col-md-6 media-img">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4">
+						<div class="col-md-6 media-img vm-xs-bottom-2 vm-md-bottom-0">
 							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
 						</div>
 						<div class="col-md-5 offset-md-1 vp-md-top-2">
@@ -24,8 +24,8 @@
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'text_w_image_right' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4">
-						<div class="col-md-5 vp-md-top-2">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4">
+						<div class="col-md-5 vp-md-top-2 vm-xs-bottom-2 vm-md-bottom-0">
 							<h2>{{ flex_field.header }}</h2>
 							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
 							<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
@@ -35,7 +35,7 @@
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content_full_width' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4">
 						<div class="col-md-12">
 							<h2>{{ flex_field.header }}</h2>
 							<p>{{ flex_field.body }}</p>
@@ -51,13 +51,13 @@
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4">
 						<div class="col-md-8 offset-md-2">
 							{{ flex_field.wysiwyg }}
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'staff_profiles' %}
-					<div class="row vp-xs-top-4 vp-xs-bottom-4">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4">
 						{% for member in flex_field.staff %}
             				<div class="col-sm-6 col-lg-4 staff">
 								<div class="staff__photo">
@@ -72,7 +72,7 @@
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'big_map' %}
 					{% if flex_field.lattitude and flex_field.longitude %}
-						<div class="row vm-xs-top-4 vm-xs-bottom-4 vp-xs-top-8 vp-xs-bottom-8" style="position: relative;">
+						<div class="row vm-xs-top-12 vm-xs-bottom-4 vp-xs-bottom-12 vm-md-top-4 vp-md-top-8 vp-md-bottom-8" style="position: relative;">
 							<div class="map-text">
 								<h3>{{ flex_field.header }}</h3>
 								<hr />
