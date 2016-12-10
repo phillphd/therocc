@@ -1,5 +1,7 @@
 {% block content %}
-	<div class="hero__alert">
-		This is an alert about something important <a href="#!">Click Here</a>
-	</div>
+	{% if options.alert_text %}
+		<div class="hero__alert">
+			{{ options.alert_text }} {% if options.alert_button_text %}<a href="{{ options.alert_button_url }}">{{ options.alert_button_text }}</a>{% endif %}
+		</div>
+	{% endif %}
 {% endblock %}

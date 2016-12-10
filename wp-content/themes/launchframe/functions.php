@@ -199,4 +199,15 @@ function bible_plan(){
 } 
 add_shortcode('bible_plan', 'bible_plan');
 
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page();	
+}
+
+add_filter( 'timber_context', 'mytheme_timber_context'  );
+
+function mytheme_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}
+
 new LaunchframeSite();
