@@ -20,6 +20,16 @@ var wb = {
 			});
         }
     },
+    mobileNavTrigger: {
+        test: function() {
+            return true;
+        },
+        run: function() {
+            $("body").on("click", ".mobile-nav-trigger", function(event) {
+                $("body").toggleClass("open-nav");
+            });
+        }
+    },
     videolauncher: {
         test: function() {
             return true;

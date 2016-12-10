@@ -22,6 +22,16 @@
                 });
             }
         },
+        mobileNavTrigger: {
+            test: function test() {
+                return true;
+            },
+            run: function run() {
+                $("body").on("click", ".mobile-nav-trigger", function (event) {
+                    $("body").toggleClass("open-nav");
+                });
+            }
+        },
         videolauncher: {
             test: function test() {
                 return true;

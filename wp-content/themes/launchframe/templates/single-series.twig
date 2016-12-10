@@ -17,7 +17,7 @@
 			<div class="row">
 				{% if post.get_field('sermons') %}
 					{% for sermon in post.get_field('sermons') %}
-						<div class="col-sm-6 ">
+						<div class="col-md-6">
 						    <a href="#!">
 						        <div class="message-card video-container" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
 						            <div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
