@@ -5846,7 +5846,7 @@ header__logo {
 
 .hero {
   position: relative;
-  min-height: 500px;
+  min-height: 340px;
   padding: 140px 20px 80px;
   margin-bottom: 20px;
   background-color: #222;
@@ -6201,6 +6201,10 @@ footer ul {
 .video-player.zoomed .player-container {
   left: 15%;
   width: 70%;
+}
+
+#tribe-events-pg-template {
+  padding-top: 160px;
 }
 
 @media (min-width: 576px) {
@@ -7320,6 +7324,7 @@ footer ul {
   }
 
   .hero {
+    min-height: 500px;
     padding: 200px 20px 120px;
     margin-bottom: 70px;
   }

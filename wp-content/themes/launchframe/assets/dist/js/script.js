@@ -27,7 +27,7 @@
                 return true;
             },
             run: function run() {
-                $("body").on("click", ".mobile-nav-trigger", function (event) {
+                $(".mobile-nav-trigger").click(function (event) {
                     $("body").toggleClass("open-nav");
                 });
             }

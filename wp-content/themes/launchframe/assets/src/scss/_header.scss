@@ -57,11 +57,12 @@ header {
 
 .hero {
     position: relative;
-    min-height: 500px;
+    min-height: 340px;
     padding: 140px 20px 80px;
     margin-bottom: 20px;
     background-color: $dark;
     @include media-breakpoint-up(md) {
+        min-height: 500px;
         padding: 200px 20px 120px;
         margin-bottom: 70px;
     }

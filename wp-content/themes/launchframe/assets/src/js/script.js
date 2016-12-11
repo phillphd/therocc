@@ -25,7 +25,7 @@ var wb = {
             return true;
         },
         run: function() {
-            $("body").on("click", ".mobile-nav-trigger", function(event) {
+            $(".mobile-nav-trigger").click(function(event) {
                 $("body").toggleClass("open-nav");
             });
         }
