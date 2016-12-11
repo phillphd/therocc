@@ -2,7 +2,7 @@
 	<div class="container vp-xs-top-3 vp-xs-bottom-4">
 		<div class="row">
 			<div class="col-xs-8 offset-xs-2 vm-xs-bottom-3 text-xs-center">
-				<p>{{ options.church_address }}<strong>10:00am at Blackman High School</strong><br />3956 Blaze Drive Murfreesboro, TN 37128</p>
+				<p>{% if options.church_address %}{{ options.church_address }}{% endif %}</p>
 			</div>
 		</div>
 		<div class="row">
