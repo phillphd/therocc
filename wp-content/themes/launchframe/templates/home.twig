@@ -28,7 +28,9 @@
 						<div class="col-md-5 vp-md-top-2 vm-xs-bottom-2 vm-md-bottom-0">
 							<h2>{{ flex_field.header }}</h2>
 							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
-							<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+							{% if flex_field.button_text %}
+								<a href="{{ flex_field.button_url }}" class="btn btn-secondary">{{ flex_field.button_text }}</a>
+							{% endif %}
 						</div>
 						<div class="col-md-6 offset-md-1 media-img">
 							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
