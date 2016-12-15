@@ -42,7 +42,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 text-xs-center">
-					<p>2633 Merchants Walk, Murfreesboro, TN 37128 | 615.893.7444<br />
+					<p>{% if options.church_address %}{{ options.church_address }}{% endif %}<br />615.893.7444<br />
 					<span>&copy; {{"now"|date('Y')}} River Oaks Community Church. All Rights Reserved.</span></p>
 				</div>
 			</div>
