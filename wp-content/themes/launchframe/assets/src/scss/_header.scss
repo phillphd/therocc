@@ -25,7 +25,7 @@ header {
     transition: .3s;
     @include media-breakpoint-up(lg) {
         display: block;
-        padding: 30px 0 26px;
+        padding: 28px 0 26px;
     }
     .open-nav & {
         max-height: 300px;

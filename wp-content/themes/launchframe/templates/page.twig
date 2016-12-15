@@ -11,7 +11,7 @@
 		<div class="container">
 			{% for flex_field in post.get_field('flex_fields') %}
 				{% if flex_field.acf_fc_layout == 'text_w_image_left' %}
-					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-6 vp-md-bottom-6">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 						<div class="col-md-6 media-img vm-xs-bottom-2 vm-md-bottom-0">
 							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
 						</div>
@@ -24,7 +24,7 @@
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'text_w_image_right' %}
-					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-6 vp-md-bottom-6">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 						<div class="col-md-5 vp-md-top-2 vm-xs-bottom-2 vm-md-bottom-0">
 							<h2>{{ flex_field.header }}</h2>
 							<p class="vm-xs-bottom-2">{{ flex_field.body }}</p>
@@ -37,7 +37,7 @@
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content_full_width' %}
-					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-6 vp-md-bottom-6">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 						<div class="col-md-12">
 							<h2>{{ flex_field.header }}</h2>
 							<p>{{ flex_field.body }}</p>
@@ -53,13 +53,13 @@
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content' %}
-					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-6 vp-md-bottom-6">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 						<div class="col-md-8 offset-md-2">
 							{{ flex_field.wysiwyg }}
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'staff_profiles' %}
-					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-6 vp-md-bottom-6">
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 						{% for member in flex_field.staff %}
             				<div class="col-sm-6 col-lg-4 staff">
 								<div class="staff__photo">
