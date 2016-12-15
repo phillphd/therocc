@@ -73,12 +73,16 @@ header {
     }
     .home & {
         height: 100vh;
+        background: transparent;
         .hero__content {
             position: absolute;
             top: 50%;
             left: 50%;
             margin: 0 auto;
             transform: translateY(-50%) translateX(-50%);
+        }
+        .bg-img {
+            background: transparent;
         }
     }
     &__logo {

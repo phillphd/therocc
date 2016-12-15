@@ -1,7 +1,7 @@
 {% block site_nav %}
 
 {% for hero in post.get_field('hero') %}
-	<div class="u-abs-full bg-img" style="background-image: url('{{ hero.bg_image }}');"></div>
+	<div class="u-abs-full bg-img" {% if fn('is_front_page') %}data-vide-bg="{{ theme.link }}/assets/src/video/rocc_bg" data-vide-options="loop: true, muted: false, position: 0% 0%"{% else %} style="background-image: url('{{ hero.bg_image }}');" {% endif %}></div>
 	<div class="hero__content">
 		<h1>{{ hero.title }}</h1>
 		<p>{{ hero.subtitle }}</p>

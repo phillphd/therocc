@@ -5860,6 +5860,7 @@ header__logo {
 
 .home .hero {
   height: 100vh;
+  background: transparent;
 }
 
 .home .hero .hero__content {
@@ -5869,6 +5870,10 @@ header__logo {
   margin: 0 auto;
   -webkit-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
+}
+
+.home .hero .bg-img {
+  background: transparent;
 }
 
 .hero__logo {
