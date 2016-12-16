@@ -162,6 +162,17 @@ header {
             color: #A9A9A9;
         }
     }
+    .bg-img {
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: fade-out($dark, .6);
+            content: "";
+        }
+    }
     iframe {
         width: 100%;
         height: 365px;
