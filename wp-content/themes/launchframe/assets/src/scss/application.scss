@@ -184,3 +184,80 @@
 #tribe-events-pg-template {
     padding-top: 160px;
 }
+
+.bible-content {
+    position: relative;
+    max-width: 1040px;
+    padding: 10px 30px;
+    margin: 0 auto;
+    .three-quarters {
+        float: left;
+        width: 74%;
+        @media (max-width: 760px) {
+            width: 100%;
+        }
+    }
+    .one-quarter {
+        float: right;
+        width: 23%;
+        padding: 0 0 0 2%;
+        @media (max-width: 760px) {
+            width: 100%;
+        }
+    }
+    table {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 30px;
+        font: 400 14px / 17px $font-family-sans-serif;
+        color: #666;
+        border-collapse: collapse;
+        tr:nth-child(even) {
+            background: #E9E9E9;
+        }
+    }
+    td {
+        padding: 20px 10px;
+        border-bottom: 1px solid #CCC;
+        &.date {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #075CB9;
+            text-align: center;
+        }
+    }
+    th {
+        padding: 20px 10px;
+        font-weight: 600;
+        color: #3D3631;
+        text-align: left;
+        background: #FFF;
+        border-bottom: 1px solid #CCC;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+}
+
+#sub-nav {
+    margin: 0 0 50px;
+    a {
+        display: block;
+        padding: 12px 22px;
+        margin: 0 0 1px;
+        font: 600 16px / 15px $font-family-sans-serif;
+        color: #075CB9;
+        background: #FFF;
+        @media (max-width: 760px) {
+            display: inline-block;
+            float: left;
+            width: 50%;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

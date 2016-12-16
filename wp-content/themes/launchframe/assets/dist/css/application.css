@@ -6222,6 +6222,82 @@ footer ul {
   padding-top: 160px;
 }
 
+.bible-content {
+  position: relative;
+  max-width: 1040px;
+  padding: 10px 30px;
+  margin: 0 auto;
+}
+
+.bible-content .three-quarters {
+  float: left;
+  width: 74%;
+}
+
+.bible-content .one-quarter {
+  float: right;
+  width: 23%;
+  padding: 0 0 0 2%;
+}
+
+.bible-content table {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 30px;
+  font: 400 14px/17px "Open Sans", sans-serif;
+  color: #666;
+  border-collapse: collapse;
+}
+
+.bible-content table tr:nth-child(even) {
+  background: #E9E9E9;
+}
+
+.bible-content td {
+  padding: 20px 10px;
+  border-bottom: 1px solid #CCC;
+}
+
+.bible-content td.date {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #075CB9;
+  text-align: center;
+}
+
+.bible-content th {
+  padding: 20px 10px;
+  font-weight: 600;
+  color: #3D3631;
+  text-align: left;
+  background: #FFF;
+  border-bottom: 1px solid #CCC;
+}
+
+.bible-content ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#sub-nav {
+  margin: 0 0 50px;
+}
+
+#sub-nav a {
+  display: block;
+  padding: 12px 22px;
+  margin: 0 0 1px;
+  font: 600 16px/15px "Open Sans", sans-serif;
+  color: #075CB9;
+  background: #FFF;
+}
+
+#sub-nav a:hover {
+  text-decoration: none;
+}
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
@@ -8782,6 +8858,22 @@ footer ul {
   .video-player.zoomed .player-container {
     left: 5%;
     width: 90%;
+  }
+}
+
+@media (max-width: 760px) {
+  .bible-content .three-quarters {
+    width: 100%;
+  }
+
+  .bible-content .one-quarter {
+    width: 100%;
+  }
+
+  #sub-nav a {
+    display: inline-block;
+    float: left;
+    width: 50%;
   }
 }
 
