@@ -6244,7 +6244,9 @@ footer ul {
   width: 100%;
   padding: 0;
   margin: 0 0 30px;
-  font: 400 14px/17px "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   color: #666;
   border-collapse: collapse;
 }
@@ -6255,6 +6257,7 @@ footer ul {
 
 .bible-content td {
   padding: 20px 10px;
+  font-family: "Open Sans", sans-serif;
   border-bottom: 1px solid #CCC;
 }
 
@@ -6289,7 +6292,9 @@ footer ul {
   display: block;
   padding: 12px 22px;
   margin: 0 0 1px;
-  font: 600 16px/15px "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
   color: #075CB9;
   background: #FFF;
 }
