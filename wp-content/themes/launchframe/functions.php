@@ -213,7 +213,7 @@ add_filter('timber_context', 'mytheme_timber_context');
 function imgix($image_url) {
 	$imgix_domain = 'http://therocc.imgix.net';
 	$the_url = parse_url($image_url, 5);
-    return $imgix_domain + $the_url;
+    return $imgix_domain . $the_url;
 }
 
 new LaunchframeSite();
