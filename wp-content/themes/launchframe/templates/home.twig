@@ -33,7 +33,7 @@
 							{% endif %}
 						</div>
 						<div class="col-md-6 offset-md-1 media-img">
-							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+							<div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', flex_field.image) }}');"></div>
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content_full_width' %}

@@ -47,7 +47,7 @@ class LaunchframeSite extends TimberSite {
   	wp_enqueue_script( 'jquery-js', 'https://code.jquery.com/jquery-3.1.1.min.js', array(), $package_version, true );
   	wp_enqueue_script( 'map-js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCj9GPxSVlN4Tz8VM69DXT2f9t4faXxO-s', array('jquery-js'), $package_version, true );
   	wp_enqueue_script( 'application-js', get_template_directory_uri() . '/assets/dist/js/script.min.js', array('jquery-js'), $package_version, true );
-    wp_enqueue_script( 'vide-js', get_template_directory_uri() . '/assets/vendor/vide/src/jquery.vide.js', array('jquery-js'), $package_version, true );
+    wp_enqueue_script( 'vide-js', get_template_directory_uri() . '/assets/vendor/vide/src/jquery.vide.min.js', array('jquery-js'), $package_version, true );
   }
 
 	function register_post_types() {
@@ -204,11 +204,16 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page();	
 }
 
-add_filter( 'timber_context', 'mytheme_timber_context'  );
-
 function mytheme_timber_context( $context ) {
     $context['options'] = get_fields('option');
     return $context;
+}
+add_filter('timber_context', 'mytheme_timber_context');
+
+function imgix($image_url) {
+	$imgix_domain = 'http://therocc.imgix.net';
+	$the_url = parse_url($image_url, 5);
+    return $imgix_domain + $the_url;
 }
 
 new LaunchframeSite();
