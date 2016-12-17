@@ -3,7 +3,7 @@
 {% block content %}
 	
 	<div class="hero hero--sermon">
-		<div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
+		<div class="u-abs-full bg-img" style="background-image: url({{ fn('imgix', post.get_field('series_artwork') ) }});"></div>
 		{% include '_partial-alert.twig' %}
 	</div>
 
@@ -20,7 +20,7 @@
 						<div class="col-md-6">
 						    <a href="#!">
 						        <div class="message-card video-container" data-vimeoid="{{ sermon.get_field('vimeo_id') }}">
-						            <div class="u-abs-full bg-img" style="background-image: url({{ post.get_field('series_artwork') }});"></div>
+						            <div class="u-abs-full bg-img" style="background-image: url({{ fn('imgix', post.get_field('series_artwork') ) }});"></div>
 						            <div class="btn-play"></div>
 						            <div class="message-card__info">
 						                <h4>{{ sermon.title }}</h3>

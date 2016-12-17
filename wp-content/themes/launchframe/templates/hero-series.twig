@@ -7,7 +7,7 @@
                 <div class="col-sm-12">
                     <a href="{{ post.link }}">
                         <div class="message-card">
-                            <div class="u-abs-full bg-img" style="background-image: url('{{ post.get_field('series_artwork') }}');"></div>
+                            <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', post.get_field('series_artwork')) }}');"></div>
                         </div>
                     </a>
                 </div>

@@ -13,7 +13,7 @@
 				{% if flex_field.acf_fc_layout == 'text_w_image_left' %}
 					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
 						<div class="col-md-6 media-img vm-xs-bottom-2 vm-md-bottom-0">
-							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+							<div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', flex_field.image) }}');"></div>
 						</div>
 						<div class="col-md-5 offset-md-1 vp-md-top-2">
 							<h2>{{ flex_field.header }}</h2>
@@ -49,7 +49,7 @@
 				{% elseif flex_field.acf_fc_layout == 'big_image' %}
 					<div class="row vp-xs-top-4">
 						<div class="col-md-12 vp-xs-top-12 vp-xs-bottom-12">
-							<div class="u-abs-full bg-img" style="background-image: url('{{ flex_field.image }}');"></div>
+							<div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', flex_field.image) }}');"></div>
 						</div>
 					</div>
 				{% elseif flex_field.acf_fc_layout == 'content' %}
