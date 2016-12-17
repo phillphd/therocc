@@ -140,7 +140,7 @@
                             "featureType": "road",
                             "elementType": "labels",
                             "stylers": [{
-                                "visibility": "off"
+                                "visibility": "on"
                             }]
                         }, {
                             "featureType": "road.highway",
