@@ -63,7 +63,7 @@
 						{% for member in flex_field.staff %}
             				<div class="col-sm-6 col-lg-4 staff">
 								<div class="staff__photo">
-									<div class="u-abs-full bg-img" style="background-image: url('{{ member.photo }}');"></div>
+									<div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', member.photo) }}');"></div>
 								</div>
 								<div class="staff__meta">
 									<h5 class="staff__name">{{ member.name }}</h5>
