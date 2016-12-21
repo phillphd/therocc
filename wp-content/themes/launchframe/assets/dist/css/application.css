@@ -581,7 +581,7 @@ mark,
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   font-size: 1.25rem;
-  border-left: 0.25rem solid #eceeef;
+  border-left: 0.25rem solid #EFEFEF;
 }
 
 .blockquote-footer {
@@ -598,7 +598,7 @@ mark,
   padding-right: 1rem;
   padding-left: 0;
   text-align: right;
-  border-right: 0.25rem solid #eceeef;
+  border-right: 0.25rem solid #EFEFEF;
   border-left: 0;
 }
 
@@ -1022,16 +1022,16 @@ pre code {
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #eceeef;
+  border-top: 1px solid #EFEFEF;
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #eceeef;
+  border-bottom: 2px solid #EFEFEF;
 }
 
 .table tbody + tbody {
-  border-top: 2px solid #eceeef;
+  border-top: 2px solid #EFEFEF;
 }
 
 .table .table {
@@ -1044,12 +1044,12 @@ pre code {
 }
 
 .table-bordered {
-  border: 1px solid #eceeef;
+  border: 1px solid #EFEFEF;
 }
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #eceeef;
+  border: 1px solid #EFEFEF;
 }
 
 .table-bordered thead th,
@@ -1147,11 +1147,11 @@ pre code {
 
 .thead-default th {
   color: #55595c;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
 }
 
 .table-inverse {
-  color: #eceeef;
+  color: #EFEFEF;
   background-color: #373a3c;
 }
 
@@ -1183,13 +1183,13 @@ pre code {
 
 .table-reflow th,
 .table-reflow td {
-  border-top: 1px solid #eceeef;
-  border-left: 1px solid #eceeef;
+  border-top: 1px solid #EFEFEF;
+  border-left: 1px solid #EFEFEF;
 }
 
 .table-reflow th:last-child,
 .table-reflow td:last-child {
-  border-right: 1px solid #eceeef;
+  border-right: 1px solid #EFEFEF;
 }
 
 .table-reflow thead:last-child tr:last-child th,
@@ -1198,7 +1198,7 @@ pre code {
 .table-reflow tbody:last-child tr:last-child td,
 .table-reflow tfoot:last-child tr:last-child th,
 .table-reflow tfoot:last-child tr:last-child td {
-  border-bottom: 1px solid #eceeef;
+  border-bottom: 1px solid #EFEFEF;
 }
 
 .table-reflow tr {
@@ -1208,7 +1208,7 @@ pre code {
 .table-reflow tr th,
 .table-reflow tr td {
   display: block !important;
-  border: 1px solid #eceeef;
+  border: 1px solid #EFEFEF;
 }
 
 .form-control {
@@ -1259,7 +1259,7 @@ pre code {
 
 .form-control:disabled,
 .form-control[readonly] {
-  background-color: #eceeef;
+  background-color: #EFEFEF;
   opacity: 1;
 }
 
@@ -2719,7 +2719,7 @@ tbody.collapse.in {
   line-height: 1.25;
   color: #55595c;
   text-align: center;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0;
 }
@@ -2934,7 +2934,7 @@ tbody.collapse.in {
 .custom-select:disabled {
   color: #E8E8E8;
   cursor: not-allowed;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
 }
 
 .custom-select::-ms-expand {
@@ -3071,7 +3071,7 @@ tbody.collapse.in {
 
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link:hover {
-  border-color: #eceeef #eceeef #ddd;
+  border-color: #EFEFEF #EFEFEF #ddd;
 }
 
 .nav-tabs .nav-link.disabled,
@@ -3647,7 +3647,7 @@ tbody.collapse.in {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
   border-radius: 0;
 }
 
@@ -3738,7 +3738,7 @@ tbody.collapse.in {
 .page-link:focus,
 .page-link:hover {
   color: #859a2d;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
   border-color: #ddd;
 }
 
@@ -3864,12 +3864,12 @@ a.tag:hover {
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
   border-radius: 0;
 }
 
 .jumbotron-hr {
-  border-top-color: #d0d5d8;
+  border-top-color: #d6d6d6;
 }
 
 .jumbotron-fluid {
@@ -4187,7 +4187,7 @@ base::-moz-progress-bar,
 .list-group-item.disabled:hover {
   color: #E8E8E8;
   cursor: not-allowed;
-  background-color: #eceeef;
+  background-color: #EFEFEF;
 }
 
 .list-group-item.disabled .list-group-item-heading,
@@ -5645,6 +5645,10 @@ a.text-gray-dark:hover {
   width: 100%;
 }
 
+.u-color-primary {
+  color: #B1CA4A;
+}
+
 .no-gutter {
   padding-right: 0;
   padding-left: 0;
@@ -6000,13 +6004,49 @@ header__logo {
 
 footer {
   margin-top: 70px;
-  background-color: #E8E8E8;
+  background-color: #EFEFEF;
 }
 
 footer ul {
   padding: 0;
   margin: 0;
+  text-align: center;
   list-style-type: none;
+}
+
+footer ul li {
+  margin-bottom: 5px;
+}
+
+footer ul a {
+  position: relative;
+  color: #222;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+footer ul a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #B1CA4A;
+  content: "";
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+footer ul a:hover,
+footer ul a:focus {
+  color: #222;
+  text-decoration: none;
+}
+
+footer ul a:hover::after,
+footer ul a:focus::after {
+  opacity: 1;
 }
 
 .base {

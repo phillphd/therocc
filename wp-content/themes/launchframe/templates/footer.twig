@@ -1,5 +1,5 @@
 <footer>
-	<div style="background-color: #EFEFEF;">
+	<div style="background-color: #E8E8E8;">
 		<div class="container vp-xs-top-1 vp-xs-bottom-1">
 			<div class="row">
 				<div class="col-xs-8 offset-xs-2 text-xs-center">
@@ -10,9 +10,9 @@
 	</div>
 	<div class="container vp-xs-top-3 vp-xs-bottom-3">
 		<div class="row">
-			<div class="col-sm-4 col-lg-2 offset-lg-3 vm-xs-bottom-2 vm-md-bottom-0 text-xs-center text-sm-left">
+			<div class="col-sm-4 col-lg-2 offset-lg-3 vm-xs-bottom-2 vm-md-bottom-0 text-xs-center">
 				{% if footerNav1.get_items %}
-					<h5>{{footerNav1.title}}</h5>
+					<h5 class="vm-xs-bottom-1 u-color-primary"><strong>{{footerNav1.title}}</strong></h5>
 					<ul>
 						{% for item in footerNav1.get_items %}
 							<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
@@ -20,9 +20,9 @@
 					</ul>
 				{% endif %}
 			</div>
-			<div class="col-sm-4 col-lg-2 vm-xs-bottom-2 vm-md-bottom-0 text-xs-center text-sm-left">
+			<div class="col-sm-4 col-lg-2 vm-xs-bottom-2 vm-md-bottom-0 text-xs-center">
 				{% if footerNav2.get_items %}
-					<h5>{{footerNav2.title}}</h5>
+					<h5 class="vm-xs-bottom-1 u-color-primary"><strong>{{footerNav2.title}}</strong></h5>
 					<ul>
 						{% for item in footerNav2.get_items %}
 							<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
@@ -30,9 +30,9 @@
 					</ul>
 				{% endif %}
 			</div>
-			<div class="col-sm-4 col-lg-2 vm-xs-bottom-2 vm-md-bottom-0 text-xs-center text-sm-left">
+			<div class="col-sm-4 col-lg-2 vm-xs-bottom-2 vm-md-bottom-0 text-xs-center">
 				{% if footerNav3.get_items %}
-					<h5>{{footerNav3.title}}</h5>
+					<h5 class="vm-xs-bottom-1 u-color-primary"><strong>{{footerNav3.title}}</strong></h5>
 					<ul>
 						{% for item in footerNav3.get_items %}
 							<li class="{{item.classes | join(' ')}}"><a href="{{item.get_link}}">{{item.title}}</a></li>
