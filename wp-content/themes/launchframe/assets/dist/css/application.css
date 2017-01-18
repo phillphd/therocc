@@ -6112,6 +6112,10 @@ footer ul a:focus::after {
   transition: .4s;
 }
 
+.message-card.no-overlay::after {
+  opacity: 0;
+}
+
 .message-card__info {
   position: absolute;
   bottom: 0;

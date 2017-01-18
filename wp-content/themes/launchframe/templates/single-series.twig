@@ -3,17 +3,19 @@
 {% block content %}
 	
 	<div class="hero">
-		<div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <a href="{{ post.link }}">
-                        <div class="message-card">
-                            <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', post.get_field('series_artwork')) }}');"></div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+		<div class="hero__content">
+			<div class="container">
+	            <div class="row">
+	                <div class="col-sm-12">
+	                    <a href="{{ post.link }}">
+	                        <div class="message-card no-overlay">
+	                            <div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', post.get_field('series_artwork')) }}');"></div>
+	                        </div>
+	                    </a>
+	                </div>
+	            </div>
+	        </div>
+		</div>
 		{% include '_partial-alert.twig' %}
 	</div>
 

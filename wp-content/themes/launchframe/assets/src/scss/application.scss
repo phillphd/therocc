@@ -46,6 +46,11 @@
         background-color: fade-out($dark, .6);
         transition: .4s;
     }
+    &.no-overlay {
+        &::after {
+            opacity: 0;
+        }
+    }
     &__info {
         position: absolute;
         bottom: 0;
