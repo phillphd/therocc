@@ -42,7 +42,14 @@ var wb = {
             var player = $(".video-player");
             b.on("click", ".video-container", function(event) {
                 event.preventDefault();
-                var url = "https://player.vimeo.com/video/" + $(this).data("vimeoid") + "?byline=0&badge=0";
+                var videoID = $(this).data("vimeoid");
+                // Default to Vimeo
+                var url = "https://player.vimeo.com/video/" + videoID + "?byline=0&badge=0";
+                // Change to Youtube
+                if(videoID.length === 11 && !$.isNumeric(videoID)) {
+                    url = "https://www.youtube.com/embed/" + videoID;
+                }
+
                 var iframeHtml = "<iframe src=\"" + url + "\" width=\"100%\" height=\"100%\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>";
                 b.addClass("video-on");
                 player.css("display", "block");
