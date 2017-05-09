@@ -6002,6 +6002,29 @@ header__logo {
   cursor: pointer;
 }
 
+.header-link-mod {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  display: none;
+  height: 100%;
+  max-height: 40px;
+  opacity: .5;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header-link-mod:hover {
+  opacity: .9;
+}
+
+.header-link-mod img {
+  max-width: 100%;
+  max-height: 40px;
+}
+
 footer {
   margin-top: 70px;
   background-color: #EFEFEF;
@@ -8050,6 +8073,10 @@ footer ul a:focus::after {
 
   .mobile-nav-trigger {
     display: none;
+  }
+
+  .header-link-mod {
+    display: block;
   }
 }
 

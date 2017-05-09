@@ -205,3 +205,25 @@ header {
         cursor: pointer;
     }
 }
+
+.header-link-mod {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    display: none;
+    height: 100%;
+    max-height: 40px;
+    opacity: .5;
+    transform: translateY(-50%);
+    transition: .3s;
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+    &:hover {
+        opacity: .9;
+    }
+    img {
+        max-width: 100%;
+        max-height: 40px;
+    }
+}
