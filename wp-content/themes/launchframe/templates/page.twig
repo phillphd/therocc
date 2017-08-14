@@ -72,6 +72,25 @@
 							</div>
     					{% endfor %}
 					</div>
+				{% elseif flex_field.acf_fc_layout == 'group_profiles' %}
+					<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
+						{% for group in flex_field.group %}
+							{% if group.childcare_provided %}
+								{% set childcare = 'Childcare Provided' %}
+							{% else %}
+								{% set childcare = 'No Childcare' %}
+							{% endif %}
+            				<div class="col-sm-6 col-lg-4 staff">
+								<div class="staff__photo">
+									<div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', group.photo) }}');"></div>
+								</div>
+								<div class="staff__meta">
+									<h5 class="staff__name">{{ group.name }}</h5>
+									<h5><strong>{{ group.group_category }}</strong><br /><strong>{{ group.time }} | {{ childcare }}</strong></h5>
+								</div>
+							</div>
+    					{% endfor %}
+					</div>
 				{% elseif flex_field.acf_fc_layout == 'big_map' %}
 					{% if flex_field.lattitude and flex_field.longitude %}
 						<div class="row vm-xs-top-12 vm-xs-bottom-4 vp-xs-bottom-12 vm-md-top-4 vp-md-top-8 vp-md-bottom-8" style="position: relative;">
