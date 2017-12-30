@@ -7,6 +7,7 @@
 @import "forms";
 @import "header";
 @import "footer";
+@import "lightbox";
 
 .btn-play {
     position: absolute;
@@ -367,4 +368,83 @@
             margin-bottom: 5px;
         }
     }
+}
+
+.lightboxgallery-gallery {
+    display: block;
+    margin: 60px -10px;
+}
+.lightboxgallery-gallery-item {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+    cursor: zoom-in;
+    @include media-breakpoint-up(md) {
+        width: 33.3333%;
+    }
+    @include media-breakpoint-up(lg) {
+        width: 25%;
+    }
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: 100%;
+        transform: translate(-50%,-50%);
+    }
+    > div {
+        position: relative;
+        height: 100%;
+        margin: 10px;
+        overflow: hidden;
+        background-color: $gray-lighter;
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .3) 100%);
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, .3) 100%);
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, .3) 100%);
+            content: " ";
+            opacity: 0;
+            transition: opacity 400ms;
+        }
+    }
+    &:hover {
+        > div::after {
+            opacity: 1;
+        }
+        .lightboxgallery-gallery-item-content {
+            opacity: 1;
+        }
+    }
+}
+
+.lightboxgallery-gallery-item-content {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 400ms;
+}
+
+.lightboxgallery-gallery-item-title {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    color: $light;
 }

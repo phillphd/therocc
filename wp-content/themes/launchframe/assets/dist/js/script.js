@@ -96,6 +96,21 @@
                 });
             }
         },
+        gallery: {
+            test: function test() {
+                return $(".lightboxgallery-gallery").length;
+            },
+            run: function run() {
+                $(document).on('click', '.lightboxgallery-gallery-item', function (event) {
+                    event.preventDefault();
+                    $(this).lightboxgallery({
+                        showCounter: true,
+                        showTitle: true,
+                        showDescription: true
+                    });
+                });
+            }
+        },
         map: {
             test: function test() {
                 return $("#map").length;

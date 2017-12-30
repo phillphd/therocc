@@ -107,5 +107,20 @@
 				{% endfor %}
 			</ul>
 		</div>
+	{% elseif flex_field.acf_fc_layout == 'gallery' %}
+		<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
+			<div class="lightboxgallery-gallery clearfix">
+				{% for image in flex_field.gallery %}
+					<a class="lightboxgallery-gallery-item" target="_blank" href="{{ image.image }}" data-title="{{ image.image_name }}" data-alt="{{ image.image_name }}" data-desc="{{ image.image_caption }}">
+						<div>
+							<img src="{{ image.image }}" title="{{ image.image_name }}" alt="{{ image.image_name }}">
+							<div class="lightboxgallery-gallery-item-content">
+								<span class="lightboxgallery-gallery-item-title">{{ image.image_name }}</span>
+							</div>
+						</div>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
 	{% endif %}
 {% endfor %}
