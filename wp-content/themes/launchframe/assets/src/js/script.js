@@ -83,6 +83,17 @@ var wb = {
             $("#" + month).show();
         }
     },
+    faq: {
+        test: function() {
+            return $(".faq__question").length;
+        },
+        run: function() {
+            $("body").on("click touchstart", ".faq__question", function() {
+                $(".faq li").removeClass("faq--active");
+                $(this).parent("li").addClass("faq--active");
+            });
+        }
+    },
     map: {
         test: function() {
             return $("#map").length;

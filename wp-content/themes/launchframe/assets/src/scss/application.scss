@@ -271,3 +271,100 @@
         }
     }
 }
+
+.faq {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    li {
+        margin-bottom: 15px;
+    }
+    &--active {
+        .faq__state::before {
+            width: 11px;
+            height: 2px;
+        }
+        .faq__question {
+            padding: 20px 10px;
+            padding-right: 50px;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-bottom: 1px solid fade-out($dark, .5);
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        .faq__answer {
+            max-height: 1000px;
+            padding: 30px;
+            transition: max-height .4s ease-out, padding-top .4s ease-out, padding-bottom .4s ease-out;
+        }
+    }
+    &__state {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid fade-out($dark, .5);
+        border-radius: 50%;
+        content: "";
+        transform: translateY(-50%);
+        transition: .4s;
+        &::after,
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 11px;
+            background-color: fade-out($dark, .5);
+            content: "";
+            transform: translateY(-50%) translateX(-50%);
+            transition: .4s;
+        }
+        &::after {
+            width: 11px;
+            height: 2px;
+        }
+    }
+    &__question {
+        position: relative;
+        padding: 20px;
+        padding-right: 50px;
+        background-color: $gray-light;
+        border: 1px solid $gray-light;
+        transition: .4s;
+        &:hover {
+            cursor: pointer;
+            background-color: fade-out($gray-light, .2);
+            .faq__state {
+                border: 2px solid fade-out($dark, .2);
+            }
+            &::after,
+            &::before {
+                background-color: fade-out($dark, .2);
+            }
+        }
+        h5 {
+            margin: 0;
+        }
+    }
+    &__answer {
+        height: 100%;
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: fade-out($gray-lighter, .5);
+        transition: max-height .4s ease-out, padding-top .4s ease-out, padding-bottom .4s ease-out;
+    }
+    ul {
+        margin: 0 0 20px;
+        @include media-breakpoint-up(lg) {
+            margin: 20px 20px 30px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    }
+}
