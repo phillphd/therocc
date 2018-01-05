@@ -95,6 +95,69 @@
     }
 }
 
+.group {
+    position: relative;
+    height: 250px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    color: $light;
+    &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: fade-out(#000, .5);
+        content: "";
+    }
+    &:hover {
+        .group__photo {
+            transform: scale(1.2);
+        }
+    }
+    &__wrapper {
+        @include media-breakpoint-up(sm) {
+            margin: 0 -30px !important;
+        }
+    }
+    &__photo {
+        filter: blur(5px);
+        transform: scale(1.1);
+        transition: .2s;
+    }
+    &__meta {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        padding: 0 20px;
+        transform: translateY(-50%);
+    }
+    &__name {
+        font-size: 1.3rem;
+    }
+    &__link {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9;
+        padding: 4px 10px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .5px;
+        color: $light;
+        text-transform: uppercase;
+        background-color: $brand-primary;
+        transition: .2s;
+        &:hover {
+            color: $light;
+            text-decoration: none;
+            opacity: .8;
+        }
+    }
+}
+
 .video-player {
     position: fixed;
     top: 0;

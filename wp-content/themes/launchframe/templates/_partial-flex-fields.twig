@@ -62,20 +62,23 @@
 			{% endfor %}
 		</div>
 	{% elseif flex_field.acf_fc_layout == 'group_profiles' %}
-		<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2">
+		<div class="row vp-xs-top-2 vp-xs-bottom-2 vp-md-top-4 vp-md-bottom-4 vm-xs-top-2 vm-xs-bottom-2 group__wrapper">
 			{% for group in flex_field.group %}
 				{% if group.childcare_provided %}
 					{% set childcare = 'Childcare Provided' %}
 				{% else %}
 					{% set childcare = 'No Childcare' %}
 				{% endif %}
-				<div class="col-sm-6 col-lg-4 staff">
-					<div class="staff__photo">
-						<div class="u-abs-full bg-img" style="background-image: url('{{ fn('imgix', group.photo) }}');"></div>
-					</div>
-					<div class="staff__meta">
-						<h5 class="staff__name">{{ group.name }}</h5>
-						<h5><strong>{{ group.group_category }}</strong><br /><strong>{{ group.time }} | {{ childcare }}</strong></h5>
+				<div class="col-sm-6 col-lg-4">
+					<div class="group">
+						<div class="u-abs-full bg-img group__photo" style="background-image: url('{{ fn('imgix', group.photo) }}');"></div>
+						<div class="group__meta">
+							<h5 class="group__name">{{ group.name }}</h5>
+							<h5><strong>{{ group.group_category }}</strong><br /><strong>{{ group.time }} | {{ childcare }}</strong></h5>
+						</div>
+						{% if group.signup_form_url %}
+							<a href="{{ group.signup_form_url }}" class="group__link">Sign Up</a>
+						{% endif %}
 					</div>
 				</div>
 			{% endfor %}
